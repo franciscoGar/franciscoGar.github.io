@@ -95,6 +95,21 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+
+.myButton {
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:10px;
+	border:3px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	padding:5px 8px;
+	text-decoration:none;
+}
 </style>
 
 
@@ -121,6 +136,7 @@ html {
                 </td>
                 <td>
                     <input id="BatCH" name="BatCH" type="text" size="28" />
+					<a onclick='validate()' class="myButton">+</a>
                 </td>
             </tr>
             <tr>
@@ -163,18 +179,21 @@ html {
 	</div>
 	</div>
 </div>
-	<script>
-	var input = document.getElementById("BatCH");
+<script>
+var input = document.getElementById("BatCH");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
-   if (input.value != "" ){
+   validate();
+  }
+});
+ function validate() {
+   if (document.getElementById("BatCH").value != "" ){
    document.getElementById("BatCH").disabled = true;
    document.getElementById("Barcode").disabled = false;
    document.getElementById("Barcode").focus();
    }
-  }
-});
+}
 
 var input1 = document.getElementById("Barcode");
 input1.addEventListener("keyup", function(event) {

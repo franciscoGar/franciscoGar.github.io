@@ -3,37 +3,20 @@
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <style>
-.plus-button {
-	border: 2px solid lightgrey;
-	background-color: #fff;
-	font-size: 16px;
-	height: 2.5em;
-	width: 2.5em;
-	border-radius: 999px;
-	position: relative;
-	
-	&:after,
-	&:before {
-		content: "";
-		display: block;
-		background-color: grey;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	
-	&:before {
-		height: 1em;
-		width: 0.2em;
-	}
-
-	&:after {
-		height: 0.2em;
-		width: 1em;
-	}
+.myButton {
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:10px;
+	border:3px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	padding:5px 8px;
+	text-decoration:none;
 }
-
 </style>
 <title>Inventory</title>
 
@@ -48,7 +31,7 @@
                 </td>
                 <td>
                     <input id="BatCH" name="BatCH" inputmode="numeric" size="28" />
-					<button class="plus-button"></button>
+					<a onclick='validate()' class="myButton">+</a>
                 </td>
             </tr>
             <tr>
@@ -83,13 +66,16 @@
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
-   if (input.value != "" ){
+   validate();
+  }
+});
+ function validate() {
+   if (document.getElementById("BatCH").value != "" ){
    document.getElementById("BatCH").disabled = true;
    document.getElementById("Barcode").disabled = false;
    document.getElementById("Barcode").focus();
    }
-  }
-});
+}
 
 var input1 = document.getElementById("Barcode");
 input1.addEventListener("keyup", function(event) {
