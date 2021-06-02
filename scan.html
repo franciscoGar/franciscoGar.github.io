@@ -6,94 +6,81 @@
 * {
   box-sizing: border-box;
 }
-
 @media screen and (min-width: 600px) {
   div.row {
-    font-size: 50px;
+	font-size: 50px;
   }
 }
-
 @media screen and (max-width: 600px) {
-  div.row {
-    font-size: 30px;
-  }
+	div.row {
+	font-size: 30px;
+	}
 }
-
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
-
 [class*="col-"] {
-  float: left;
-  padding: 15px;
+	float: left;
+	padding: 15px;
 }
-
 html {
-  font-family: "Lucida Sans", sans-serif;
+	font-family: "Lucida Sans", sans-serif;
 }
-
 .header {
-  background-color: #9933cc;
-  color: #ffffff;
-  padding: 15px;
+	background-color: #9933cc;
+	color: #ffffff;
+	padding: 15px;
 }
-
 .menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
-
 .menu li {
-  padding: 8px;
-  margin-bottom: 7px;
-  background-color: #33b5e5;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 8px;
+	margin-bottom: 7px;
+	background-color: #33b5e5;
+	color: #ffffff;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
-.menu li:hover {
-  background-color: #0099cc;
+menu li:hover {
+	background-color: #0099cc;
 }
-
 .aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: #33b5e5;
+	padding: 15px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 14px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
 .footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
+	background-color: #0099cc;
+	color: #ffffff;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
 }
-
 /* For mobile phones: */
 [class*="col-"] {
-  width: 100%;
+	width: 100%;
 }
-
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
+/* For desktop: */
+	col-1 {width: 8.33%;}
+	col-2 {width: 16.66%;}
+	col-3 {width: 25%;}
+	col-4 {width: 33.33%;}
+	col-5 {width: 41.66%;}
+	col-6 {width: 50%;}
+	col-7 {width: 58.33%;}
+	col-8 {width: 66.66%;}
+	col-9 {width: 75%;}
+	col-10 {width: 83.33%;}
+	col-11 {width: 91.66%;}
+	col-12 {width: 100%;}
 }
 
 .myButton {
@@ -121,132 +108,115 @@ html {
 </head>
 <body>
 	<div class="header">
-	  <h1>Inventory</h1>
+	<h1>Inventory</h1>
 	</div>
 
 <div class="row">
 	<div class="col-3 menu">
-
-	
-    <form name="list" id="list">
-        <table>
-            <tr>
-                <td>
-                    <label for="BatCH">BatCH:</label>
-                </td>
-                <td>
-                    <input id="BatCH" name="BatCH" inputmode="numeric" size="28" />
-					<a onclick='validate()' class="myButton">+</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="Barcode">BArcode:</label>
-                </td>
-                <td>
-                    <input id="Barcode" name="Barcode"  size="28" disabled/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input id="Qtty" type="hidden" name="Qtty" value="1" size="28" />
-                </td>
-            </tr>
-        </table>
-     </form>
-    <br>
-    <button>Generate Import File (CSV)</button>
+	<form name="list" id="list">
+	<table>
+		<tr>
+		<td>
+			<label for="BatCH">Batch:</label>
+		</td>
+		<td>
+			<input id="BatCH" name="BatCH" inputmode="numeric" size="28" />
+			<a onclick='validate()' class="myButton">+</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<label for="Barcode">Barcode:</label>
+		</td>
+		<td>
+			<input id="Barcode" name="Barcode"  size="28" disabled/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<input id="Qtty" type="hidden" name="Qtty" value="1" size="28" />
+		</td>
+		</tr>
+	</table>
+	 </form>
+	<br>
+	<button>Generate Import File (CSV)</button>
 	</div>
-
   <div class="col-3">
-
-    <p>  </p>
+	<p>  </p>
   </div>
-
-
-
 	<div class="col-3 right">
-    <div class="aside">
-    <table id="results" width="360">
-        <thead>
-        <tr>
-            <th scope="col" width="120">Batch</th>
-            <th scope="col" width="120">Barcode</th>
-            <th scope="col" width="120">Qtty</th>
-        </tr>
-        </thead>
-    </table>
+	<div class="aside">
+	<table id="results" width="360">
+	<thead>
+	<tr>
+		<th scope="col" width="120">Batch</th>
+		<th scope="col" width="120">Barcode</th>
+		<th scope="col" width="120">Qtty</th>
+	</tr>
+	</thead>
+	</table>
 	</div>
 	</div>
 </div>
 <script>
 var input = document.getElementById("BatCH");
 input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-   event.preventDefault();
-   validate();
-  }
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		validate();
+	}
 });
  function validate() {
-   if (document.getElementById("BatCH").value != "" ){
-   document.getElementById("BatCH").disabled = true;
-   document.getElementById("Barcode").disabled = false;
-   document.getElementById("Barcode").focus();
-   }
+	if (document.getElementById("BatCH").value != "" ){
+		document.getElementById("BatCH").disabled = true;
+		document.getElementById("Barcode").disabled = false;
+		document.getElementById("Barcode").focus();
+	}
 }
 
 var input1 = document.getElementById("Barcode");
 input1.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-   event.preventDefault();
-   if (input1.value != "" ){
-   updateForm ();
-   input1.value =""
-   
-   }
-  }
+	if (event.keyCode === 13) {
+		event.preventDefault();
+	if (input1.value != "" ){
+		updateForm ();
+		input1.value =""
+	}
+}
 });
 
-
-
 function updateForm() {
-            var product = document.getElementById("BatCH").value;
-            var qty = document.getElementById("Barcode").value;
-            var price = document.getElementById("Qtty").value;    
-            var table=document.getElementById("results");
-            var row=table.insertRow(1);
-            var cell1=row.insertCell(0);
-            var cell2=row.insertCell(1);
-            var cell3=row.insertCell(2);
-            cell1.innerHTML=product;
-            cell2.innerHTML=qty;        
-            cell3.innerHTML=price;           
-        }
+	var product = document.getElementById("BatCH").value;
+	var qty = document.getElementById("Barcode").value;
+	var price = document.getElementById("Qtty").value;
+	var table=document.getElementById("results");
+	var row=table.insertRow(1);
+	var cell1=row.insertCell(0);
+	var cell2=row.insertCell(1);
+	var cell3=row.insertCell(2);
+	cell1.innerHTML=product;
+	cell2.innerHTML=qty;
+	cell3.innerHTML=price;
+}
 
 function download_csv(csv, filename) {
-    var csvFile;
-    var downloadLink;
-
-    // CSV FILE
-    csvFile = new Blob([csv], {type: "text/csv"});
-
-    // Download link
-    downloadLink = document.createElement("a");
-
-    // File name
-    downloadLink.download = filename;
-
-    // We have to create a link to the file
-    downloadLink.href = window.URL.createObjectURL(csvFile);
-
-    // Make sure that the link is not displayed
-    downloadLink.style.display = "none";
-
-    // Add the link to your DOM
-    document.body.appendChild(downloadLink);
-
-    // Lanzamos
-    downloadLink.click();
+	var csvFile;
+	var downloadLink;
+	// CSV FILE
+	csvFile = new Blob([csv], {type: "text/csv"});
+	// Download link
+	downloadLink = document.createElement("a");
+	// File name
+	downloadLink.download = filename;
+	// We have to create a link to the file
+	downloadLink.href = window.URL.createObjectURL(csvFile);
+	// Make sure that the link is not displayed
+	downloadLink.style.display = "none";
+	// Add the link to your DOM
+	document.body.appendChild(downloadLink);
+	// Lanzamos
+	downloadLink.click();
 }
 
 function export_table_to_csv(html, filename) {
@@ -254,17 +224,16 @@ function export_table_to_csv(html, filename) {
 	var table = document.getElementById("results")
 	var rows = table.querySelectorAll("table tr");
 	if (rows.length>1) {
-    for (var i = 1; i < rows.length; i++) {
+	for (var i = 1; i < rows.length; i++) {
 		var row = [], cols = rows[i].querySelectorAll("td, th");
 		
-        for (var j = 0; j < cols.length; j++) 
-            row.push(cols[j].innerText);
-        
-		csv.push(row.join(","));		
+		for (var j = 0; j < cols.length; j++) 
+			row.push(cols[j].innerText);
+		csv.push(row.join(","));
 	}
 
-    // Download CSV
-    download_csv(csv.join("\n"), filename);
+	// Download CSV
+	download_csv(csv.join("\n"), filename);
 	}
 	else{
 		window.alert("No records");
@@ -273,12 +242,9 @@ function export_table_to_csv(html, filename) {
 
 document.querySelector("button").addEventListener("click", function () {
 	var d = new Date();
-    var html = document.querySelector("table").outerHTML;
+	var html = document.querySelector("table").outerHTML;
 	export_table_to_csv(html,d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+"-"+d.getHours()+"-"+d.getMinutes()+".csv" );
 });
-
-
-	</script>
-    
+</script>
 </body>
 </html>
