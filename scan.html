@@ -204,7 +204,8 @@ function download_csv(csv, filename) {
 	var csvFile;
 	var downloadLink;
 	// CSV FILE
-	csvFile = new Blob([csv], {type: "text/csv"});
+	//csvFile = new Blob([csv], {type: "text/csv"});
+	csvFile = new Blob([csv], {type: "octet/stream"});
 	// Download link
 	downloadLink = document.createElement("a");
 	// File name
