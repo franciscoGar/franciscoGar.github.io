@@ -212,9 +212,6 @@ function download_csv(csv, filename) {
 	// We have to create a link to the file
 	downloadLink.href = window.URL.createObjectURL(csvFile);
 	// Make sure that the link is not displayed
-	
-	downloadLink.target = '_blank';
-	
 	downloadLink.style.display = "none";
 	// Add the link to your DOM
 	document.body.appendChild(downloadLink);
@@ -246,7 +243,7 @@ function export_table_to_csv(html, filename) {
 document.querySelector("button").addEventListener("click", function () {
 	var d = new Date();
 	var html = document.querySelector("table").outerHTML;
-	export_table_to_csv(html,d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+"-"+d.getHours()+"-"+d.getMinutes()+".csv" );
+	export_table_to_csv(html,d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+"-"+d.getHours()+"-"+d.getMinutes()+".rbo" );
 });
 </script>
 </body>
