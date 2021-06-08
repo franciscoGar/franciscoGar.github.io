@@ -120,7 +120,7 @@ menu li:hover {
 			<label for="BatCH">Batch:</label>
 		</td>
 		<td>
-			<input id="BatCH" name="BatCH" inputmode="numeric" size="28" />
+			<input id="BatCH" name="BatCH" inputmode="numeric" size="14" />
 			<a onclick='validate()' class="myButton">+</a>
 		</td>
 		</tr>
@@ -140,19 +140,19 @@ menu li:hover {
 	</table>
 	 </form>
 	<br>
-	<button>Generate Import File (CSV)</button>
+	<button>Descargar Inventario (CSV)</button>
 	</div>
   <div class="col-3">
 	<p>  </p>
   </div>
 	<div class="col-3 right">
 	<div class="aside">
-	<table id="results" width="360">
+	<table id="results" width="200">
 	<thead>
 	<tr>
-		<th scope="col" width="120">Batch</th>
+		<th scope="col" width="60">Batch</th>
 		<th scope="col" width="120">Barcode</th>
-		<th scope="col" width="120">Qtty</th>
+		<th scope="col" width="20">Qtty</th>
 	</tr>
 	</thead>
 	</table>
@@ -204,7 +204,7 @@ function download_csv(csv, filename) {
 	var csvFile;
 	var downloadLink;
 	// CSV FILE
-	//csvFile = new Blob([csv], {type: "text/csv"});
+	//csvFile = new Blob([csv], {type: "application/zip"});
 	csvFile = new Blob([csv], {type: ""});
 	// Download link
 	downloadLink = document.createElement("a");
